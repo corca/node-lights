@@ -1,1 +1,34 @@
-# node-lights
+# Node Lights
+
+## Description
+Node Lights is a software package specifically for the Raspberry Pi Model B+ for controlling RF outlets via API/browser.
+
+## Installation
+### Create Raspbian Image
+This project uses the [Raspbian](https://www.raspberrypi.org/downloads/raspbian/) image available from the Raspberry Pi Foundation.
+
+Follow the [Installation Guide](https://www.raspberrypi.org/documentation/installation/installing-images/README.md) to install Raspbian on your Raspberry Pi Model B+.
+
+
+### Install Node.js
+Running Node on a Raspberry Pi is easier than ever. This project uses Node.js version 4.2.4, the LTS release as of this writing.
+
+To download Node.js 4.2.4, SSH to your Raspberry Pi and run the following commands.
+
+```
+wget https://nodejs.org/dist/v4.2.4/node-v4.2.4-linux-armv6l.tar.gz
+tar -xvf node-v4.2.4-linux-armv6l.tar.gz
+cd node-v4.2.4-linux-armv6l
+```
+
+Copy Node.js to /usr/local.
+
+```
+sudo cp -R * /usr/local/
+```
+
+Verify Node is installed and available.
+
+```
+node -v
+```

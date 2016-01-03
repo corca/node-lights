@@ -1,0 +1,29 @@
+{
+  "lights": {
+    "Entertainment Center": {
+      "on": "1127683",
+      "off": "1127692"
+    },
+    "Coffee Table": {
+      "on": "1120003",
+      "off": "1120012"
+    },
+    "Living Room Corner": {
+      "on": "1121539",
+      "off": "1121548"
+    },
+    "Bedside": {
+      "on": "1119539",
+      "off": "1119548"
+    },
+    "Workbench": {
+      "on": "1119683",
+      "off": "1119692"
+    }
+  },
+  "scenes": {
+    "Bedroom": ["Bedside","Workbench"],
+    "Living Room": ["Entertainment Center","Coffee Table","Living Room Corner"],
+    "Watch TV": ["Entertainment Center","Living Room Corner"]
+  }
+}

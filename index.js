@@ -6,14 +6,11 @@ var send = require('./helpers/send.js');
 
 var app = express();
 
-app.get('/', function (req, res) {
-  var lightList = "";
-  for (var light in config.lights) {
-    lightList += "<h2>" + light + "</h2>";
-    lightList += "<p>On: " + config.lights[light].on + "</p>";
-    lightList += "<p>Off: " + config.lights[light].off + "</p>";
+app.get('/send/:id', function (req, res) {
+  if (req.params.id) {
+    send(req.params.id);
   }
-  res.send(lightList);
+  res.send("Code sent: " + req.params.id);
 });
 
 app.listen(3000);

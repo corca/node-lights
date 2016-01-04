@@ -2,19 +2,13 @@
 
 var express = require('express');
 var config = require('configure');
-var send = require('./helpers/send.js');
+var sender = require('./helpers/sender.js');
 
 var app = express();
 
 app.get('/send/:id', function (req, res) {
   if (req.params.id) {
-    send(req.params.id);
-    setTimeout(function() {
-      send(req.params.id);
-      setTimeout(function() {
-        send(req.params.id);
-      }, 500);
-    }, 500);
+    sender.singleCode(req.params.id);
   }
   res.send("Code sent: " + req.params.id);
 });

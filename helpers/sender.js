@@ -1,7 +1,7 @@
 var exec = require('child_process').exec,
     child;
 
-var send = function (code) {
+var singleCode = function (code) {
   if (code) {
     child = exec('sudo ./helpers/codesend ' + code, function (error, stdout, stderr) {
       console.log('stdout: ' + stdout);
@@ -13,4 +13,12 @@ var send = function (code) {
   }
 };
 
-module.exports = send;
+var multiCode = function (codes) {
+  if (codes) {
+    codes.forEach(function(code){
+      singleCode(code);
+    });
+  }
+};
+
+module.exports.singleCode = singleCode;

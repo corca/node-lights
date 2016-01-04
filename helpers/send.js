@@ -3,7 +3,7 @@ var exec = require('child_process').exec,
 
 var send = function (code) {
   if (code) {
-    child = exec('sudo ./codesend' + code, function (error, stdout, stderr) {
+    child = exec('sudo ./helpers/codesend ' + code, function (error, stdout, stderr) {
       console.log('stdout: ' + stdout);
       console.log('stderr: ' + stderr);
       if (error !== null) {

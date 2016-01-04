@@ -9,7 +9,7 @@ var app = express();
 app.get('/', function (req, res) {
   var lightList = "";
   for (var light in config.lights) {
-    lightList += "<h6>" + light + "</h6>";
+    lightList += "<h2>" + light + "</h2>";
     lightList += "<p>On: " + config.lights[light].on + "</p>";
     lightList += "<p>Off: " + config.lights[light].off + "</p>";
   }

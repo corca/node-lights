@@ -7,13 +7,14 @@ var sender = require('./helpers/sender.js');
 
 var app = express();
 
-app.use(express.static(__dirname + '/public'));
+app.use('/static',express.static(__dirname + '/public'));
 
 app.set('view engine','jade');
 app.set('views','./views');
 
 app.get('/', function(req,res){
-  res.render('index',config.lights);
+  //res.send(typeof config.lights);
+  res.render('index',{lights:config.lights});
 });
 
 app.get('/send/:id?', function (req, res) {

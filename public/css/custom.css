@@ -1,0 +1,10 @@
+.light-title {
+  text-align:center;
+  padding-top:.5em;
+}
+
+@media (min-width: 550px) {
+  .light-title {
+    text-align:right;
+  }
+}

@@ -2,5 +2,21 @@ doctype html
 html(lang="en")
   head
     title Node Lights
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='/static/css/normalize.css', type='text/css')
+    link(rel='stylesheet', href='/static/css/skeleton.css', type='text/css')
+    link(rel='stylesheet', href='/static/css/custom.css', type='text/css')
+    link(rel='stylesheet', href='//fonts.googleapis.com/css?family=Raleway:400,300,600', type='text/css')
   body
-    h1 Hello World!
+    .section
+      .container
+        each val, index in lights
+          .row
+            .four.columns.light-title
+              h6 #{index}
+            .four.columns
+              a.button.button-primary.u-full-width(href='#', onclick='sendCommand(#{val.on})') On
+            .four.columns
+              a.button.u-full-width(href='#', onclick='sendCommand(#{val.off})') Off
+    script(type='text/javascript' src='/static/js/jquery-1.11.3.min.js')
+    script(type='text/javascript' src='/static/js/custom.js')

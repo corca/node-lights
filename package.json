@@ -25,6 +25,7 @@
   "homepage": "https://github.com/corca/node-lights#readme",
   "dependencies": {
     "configure": "0.0.1",
-    "express": "^4.13.3"
+    "express": "^4.13.3",
+    "jade": "^1.11.0"
   }
 }

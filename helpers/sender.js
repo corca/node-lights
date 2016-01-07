@@ -17,12 +17,4 @@ var singleCode = function (code) {
   }
 };
 
-var multiCode = function (codes) {
-  if (codes) {
-    codes.forEach(function(code){
-      singleCode(code);
-    });
-  }
-};
-
 module.exports.singleCode = singleCode;

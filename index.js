@@ -13,7 +13,6 @@ app.set('view engine','jade');
 app.set('views','./views');
 
 app.get('/', function(req,res){
-  //res.send(typeof config.lights);
   res.render('index',{lights:config.lights});
 });
 
@@ -22,8 +21,11 @@ app.get('/send/:id?', function (req, res) {
   if (code === undefined) {
     res.status(500).json({"Status":"Failed"});
   } else {
-    //var sendStatus = sender.singleCode(code);
-    res.status(200).json({"Status":"Success"});
+    var sendStatus = sender.singleCode(code);
+    res.status(200).json({
+      "Status":"Success",
+      "Send Status":sendStatus
+    });
   }
 });
 

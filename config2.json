@@ -1,0 +1,57 @@
+[
+  { "name": "Entertainment Center",
+    "on": ["1127683"],
+    "off": ["1127692"],
+    "type": "light"
+  },
+  { "name": "Coffee Table",
+    "on": ["1120003"],
+    "off": ["1120012"],
+    "type": "light"
+  },
+  { "name": "Living Room Corner",
+    "on": ["1121539"],
+    "off": ["1121548"],
+    "type": "light"
+  },
+  { "name": "Bedside",
+    "on": ["1119539"],
+    "off": ["1119548"],
+    "type": "light"
+  },
+  { "name": "Workbench",
+    "on": ["1119683"],
+    "off": ["1119692"],
+    "type": "light"
+  },
+  { "name": "#2",
+    "on": ["13926666"],
+    "off": ["13926658"],
+    "type": "light"
+  },
+  { "name": "#3",
+    "on": ["13926665"],
+    "off": ["13926657"],
+    "type": "light"
+  },
+  { "name": "#2 and #3",
+    "on": ["13926668"],
+    "off": ["13926660"],
+    "type": "light"
+  },
+  { "name": "Bedside",
+    "on": [""],
+    "off": [""],
+    "type": "scene"
+  },
+  { "name": "Living Room",
+    "on": [""],
+    "off": [""],
+    "type": "scene"
+  },
+  { "name": "Watch TV",
+    "on": [""],
+    "off": [""],
+    "type": "scene"
+  }
+]

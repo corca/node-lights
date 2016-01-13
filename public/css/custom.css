@@ -1,10 +1,131 @@
-.light-title {
-  text-align:center;
-  padding-top:.5em;
+/* Global Styles */
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
 }
 
-@media (min-width: 550px) {
-  .light-title {
-    text-align:right;
+body {
+  font-family: 'Raleway', sans-serif;
+  user-select: none;
+}
+
+/* Colors */
+
+.switch-on, .scene-on {
+  background-color: #38C3FF;
+}
+
+.switch-off {
+  background-color: #FF6360;
+}
+
+.location-name {
+  background-color: #50514F;
+  color: #ddd;
+}
+
+.scene-name {
+  background-color: lightgreen;
+}
+
+a.switch-on:active,
+a.switch-off:active,
+a.scene-on:active {
+  background-color: darkgrey;
+  color: white;
+}
+
+
+/* Define 12 Column Grid */
+
+.row:after,
+.block:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+[class*='col-'] {
+  float: left;
+  height: 100%;
+  text-align: center;
+  line-height: 50px;
+  padding-right: 20px;
+}
+
+[class*='col-']:last-of-type {
+  padding-right: 0;
+}
+
+.col-1-12 {
+  width: 8.333333333%;
+}
+
+.col-2-12 {
+  width: 16.666666666%;
+}
+
+.col-3-12 {
+  width: 25%;
+}
+
+.col-4-12 {
+  width: 33.333333333%;
+}
+
+.col-5-12 {
+  width: 33.33%;
+}
+
+.col-6-12 {
+  width: 50%;
+}
+
+.col-7-12 {
+  width: 58.333333331%;
+}
+
+.col-8-12 {
+  width: 66.666666664%;
+}
+
+.col-9-12 {
+  width: 75%;
+}
+
+.col-10-12 {
+  width: 83.33333333%;
+}
+
+.col-11-12 {
+  width: 91.666666663%;
+}
+
+.col-12-12 {
+  width: 100%;
+}
+
+.row {
+  border-bottom:1px solid white;
+}
+
+.switch-on {
+  border-right:1px solid white;
+}
+
+@media (min-width: 480px) {
+  .row {
+    float:left;
+    width:50%
+  }
+
+  .all-off {
+    width:100%;
+  }
+
+  .location-name, .scene-name {
+    border-right:1px solid white;
   }
 }

@@ -1,6 +1,8 @@
 function sendCommand(code) {
-  $.ajax({
-    method: "GET",
-    url: "/send/" + code
-  });
+  console.log(
+    $.ajax({
+      method: "GET",
+      url: "/send/" + code
+    })
+  );
 }

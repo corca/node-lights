@@ -4,19 +4,25 @@ html(lang="en")
     title Node Lights
     meta(name='viewport', content='width=device-width, initial-scale=1')
     link(rel='stylesheet', href='/static/css/normalize.css', type='text/css')
-    link(rel='stylesheet', href='/static/css/skeleton.css', type='text/css')
     link(rel='stylesheet', href='/static/css/custom.css', type='text/css')
-    link(rel='stylesheet', href='//fonts.googleapis.com/css?family=Raleway:400,300,600', type='text/css')
-  body
-    .section
-      .container
-        each val, index in lights
+    link(rel='stylesheet', href='//fonts.googleapis.com/css?family=Raleway:400', type='text/css')
+  body  
+    .grid
+      .block
+        .row.all-off
+          a.col-12-12.switch-off(onclick='sendCommand("AllOff")') All Off
+      each val, index in lights
+        .block
           .row
-            .four.columns.light-title
-              h6 #{index}
-            .four.columns
-              a.button.button-primary.u-full-width(href='#', onclick='sendCommand(#{val.on})') On
-            .four.columns
-              a.button.u-full-width(href='#', onclick='sendCommand(#{val.off})') Off
+            .col-12-12.location-name #{index}
+          .row
+            a.col-6-12.switch-on(onclick='sendCommand(#{val.on})') On
+            a.col-6-12.switch-off(onclick='sendCommand(#{val.off})') Off
+      each val, index in scenes
+      .block
+        .row
+          .col-12-12.location-name #{index}
+        .row
+          a.col-12-12.scene-on(onclick='sendCommand("SceneOn")') On
     script(type='text/javascript' src='/static/js/jquery-1.11.3.min.js')
     script(type='text/javascript' src='/static/js/custom.js')

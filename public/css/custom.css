@@ -115,13 +115,15 @@ a.scene-on:active {
   border-right:1px solid white;
 }
 
+/* Media Queries for ~Tablet and larger */
+
 @media (min-width: 480px) {
   .row {
     float:left;
     width:50%
   }
 
-  .all-off {
+  .all {
     width:100%;
   }
 

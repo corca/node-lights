@@ -13,7 +13,10 @@ app.set('view engine','jade');
 app.set('views','./views');
 
 app.get('/', function(req,res){
-  res.render('index',{lights:config.lights,scenes:config.scenes});
+  res.render('index',{
+    lights:config.lights,
+    scenes:config.scenes
+  });
 });
 
 app.get('/send/:id?', function (req, res) {

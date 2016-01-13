@@ -2,8 +2,8 @@
 
 var express = require('express');
 var config = require('configure');
-//var jade = require('jade');
 var sender = require('./helpers/sender.js');
+var sceneGen = require('./helpers/scenegen.js');
 
 var app = express();
 
@@ -13,9 +13,10 @@ app.set('view engine','jade');
 app.set('views','./views');
 
 app.get('/', function(req,res){
+  var scenes = sceneGen.sceneGen(config.scenes,config.lights);
   res.render('index',{
     lights:config.lights,
-    scenes:config.scenes
+    scenes:scenes
   });
 });
 

@@ -10,9 +10,9 @@ html(lang="en")
     .grid
       .block
         .row.all
-          a.col-12-12.switch-on(onclick='allLights(true)') All On
+          a.col-12-12.switch-on(onclick='sendCommand("all-on")') All On
         .row.all
-          a.col-12-12.switch-off(onclick='allLights(false)') All Off
+          a.col-12-12.switch-off(onclick='sendCommand("all-off")') All Off
       each val, index in lights
         .block
           .row
@@ -25,6 +25,7 @@ html(lang="en")
           .row
             .col-12-12.location-name #{index}
           .row
-            a.col-12-12.scene-on(onclick='sendScene(["#{val}"])') On
+            a.col-12-12.scene-on(onclick='sendCommand(["#{val}"])') On
+            
     script(type='text/javascript' src='/static/js/jquery-1.11.3.min.js')
     script(type='text/javascript' src='/static/js/custom.js')

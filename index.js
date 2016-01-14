@@ -19,7 +19,7 @@ app.get('/', function(req,res){
   var scenes = codegen.sceneGen(config.scenes,config.lights);
   var allOn = codegen.allCodes('on',config.lights);
   var allOff = codegen.allCodes('off',config.lights);
-
+  
   res.render('index',{
     lights:config.lights,
     scenes:scenes,

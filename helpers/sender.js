@@ -11,46 +11,21 @@ function codeSend (code) {
 }
 
 var executeCodes = function (codes) {
-  var Led = new LedController();
-
   if (codes) {
     codes.forEach(function(code){
-      Led.exec(cmd, function() {
+      sleep(1000, function(){
         codeSend(code);
-        console.log('Command sent');
       });
     });
   }
 };
 
-///////// Singleton
-function LedController(timeout) {
-  this.timeout = timeout || 100;
-  this.queue = [];
-  this.ready = true;
+function sleep(time, callback) {
+    var stop = new Date().getTime();
+    while(new Date().getTime() < stop + time) {
+        ;
+    }
+    callback();
 }
-
-LedController.prototype.send = function(cmd, callback) {
-  sendCmdToLed(cmd);
-  if (callback) callback();
-  // or simply `sendCmdToLed(cmd, callback)` if sendCmdToLed is async
-};
-
-LedController.prototype.exec = function() {
-  this.queue.push(arguments);
-  this.process();
-};
-
-LedController.prototype.process = function() {
-  if (this.queue.length === 0) return;
-  if (!this.ready) return;
-  var self = this;
-  this.ready = false;
-  this.send.apply(this, this.queue.shift());
-  setTimeout(function () {
-    self.ready = true;
-    self.process();
-  }, this.timeout);
-};
 
 module.exports.executeCodes = executeCodes;

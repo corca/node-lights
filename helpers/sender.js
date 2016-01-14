@@ -24,13 +24,13 @@ var executeCodes = function (codes) {
 
 ///////// Singleton
 function LedController(timeout) {
-  this.timeout = timeout || 100;
+  this.timeout = timeout || 1000;
   this.queue = [];
   this.ready = true;
 }
 
 LedController.prototype.send = function(cmd, callback) {
-  sendCmdToLed(cmd);
+  //sendCmdToLed(cmd);
   if (callback) callback();
   // or simply `sendCmdToLed(cmd, callback)` if sendCmdToLed is async
 };

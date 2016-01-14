@@ -13,10 +13,11 @@ function codeSend (code) {
 var executeCodes = function (codes) {
   if (codes) {
     codes.forEach(function(code){
-      sleep(1000, function(){
+      sleep(100, function(){
         codeSend(code);
       });
     });
+    console.log("Command complete");
   }
 };
 

@@ -13,7 +13,7 @@ function codeSend (code) {
 var executeCodes = function (codes) {
   if (codes) {
     codes.forEach(function(code){
-      sleep(100, function(){
+      sleep(250, function(){
         codeSend(code);
       });
     });

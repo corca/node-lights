@@ -17,7 +17,6 @@ var executeCodes = function (codes) {
         codeSend(code);
       });
     });
-    console.log("Command complete");
   }
 };
 

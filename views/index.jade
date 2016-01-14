@@ -10,22 +10,22 @@ html(lang="en")
     .grid
       .block
         .row.all
-          a.col-12-12.switch-on(onclick='sendCommand("all-on")') All On
+          a.col-12-12.switch-on(onclick='sendCommand([#{allOn}])') All On
         .row.all
-          a.col-12-12.switch-off(onclick='sendCommand("all-off")') All Off
+          a.col-12-12.switch-off(onclick='sendCommand([#{allOff}])') All Off
       each val, index in lights
         .block
           .row
             .col-12-12.location-name #{index}
           .row
-            a.col-6-12.switch-on(onclick='sendCommand(["#{val.on}"])') On
-            a.col-6-12.switch-off(onclick='sendCommand(["#{val.off}"])') Off
+            a.col-6-12.switch-on(onclick='sendCommand([#{val.on}])') On
+            a.col-6-12.switch-off(onclick='sendCommand([#{val.off}])') Off
       each val, index in scenes
         .block
           .row
             .col-12-12.location-name #{index}
           .row
-            a.col-12-12.scene-on(onclick='sendCommand(["#{val}"])') On
+            a.col-12-12.scene-on(onclick='sendCommand([#{val}])') On
             
     script(type='text/javascript' src='/static/js/jquery-1.11.3.min.js')
     script(type='text/javascript' src='/static/js/custom.js')

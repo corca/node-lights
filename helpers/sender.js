@@ -12,7 +12,9 @@ function codeSend (code) {
 
 var executeCodes = function (codes) {
   if (codes) {
-    codes.forEach(codeSend(code));
+    codes.forEach(function(code){
+      codeSend(code);
+    });
   }
 };
 

@@ -1,9 +1,9 @@
 function sendCommand(code) {
-  console.log(code);
-  // console.log(
-  //   $.ajax({
-  //     method: "GET",
-  //     url: "/send/" + code
-  //   })
-  // );
+    $.ajax({
+      type: 'POST',
+      data: JSON.stringify({codes:code}),
+      url: '/',
+      contentType: 'application/json',
+      dataType: 'json'
+    });
 }

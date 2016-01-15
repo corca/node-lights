@@ -17,7 +17,7 @@ var executeCodes = function (codes) {
   if (codes) {
     for (var i = 0; i < codes.length; i++) {
       codeSend(codes[i]);
-      sleep.usleep(100000);
+      sleep.usleep(500000);
     }
   }
 };

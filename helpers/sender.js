@@ -1,5 +1,6 @@
 var exec = require('child_process').exec,
     child;
+var sleep = require('sleep');
 
 function codeSend (code) {
   child = exec('sudo ./helpers/codesend ' + code, function (error, stdout, stderr) {
@@ -12,20 +13,11 @@ function codeSend (code) {
 
 var executeCodes = function (codes) {
   if (codes) {
-    codes.forEach(function(code){
-      sleep(250, function(){
-        codeSend(code);
-      });
-    });
+    for (var i = 0; i < codes.length; i++) {
+      codeSend(code);
+      sleep(0.1);
+    }
   }
 };
-
-function sleep(time, callback) {
-    var stop = new Date().getTime();
-    while(new Date().getTime() < stop + time) {
-        ;
-    }
-    callback();
-}
 
 module.exports.executeCodes = executeCodes;

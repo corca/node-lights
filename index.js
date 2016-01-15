@@ -16,40 +16,17 @@ app.set('view engine','jade');
 app.set('views','./views');
 
 app.get('/', function(req,res){
-  var scenes = codegen.sceneGen(config.scenes,config.lights);
-  var allOn = codegen.allCodes('on',config.lights);
-  var allOff = codegen.allCodes('off',config.lights);
-  
   res.render('index',{
     lights:config.lights,
-    scenes:scenes,
-    allOn:allOn,
-    allOff:allOff
+    scenes:codegen.sceneGen(config.scenes,config.lights),
+    allOn:codegen.allCodes('on',config.lights),
+    allOff:codegen.allCodes('off',config.lights)
   });
 });
 
 app.post('/', function(req,res){
-  var codeArray = [];
-  for (var code in req.body.codes) {
-    codeArray.push(req.body.codes[code]);
-  }
-  sender.executeCodes(codeArray);
+  sender.executeCodes(codegen.codeArrayGen(req.body.codes));
   res.status(200).send("Received");
 });
-
-// app.get('/send/:id?', function (req, res) {
-//   var code = req.params.id;
-//   if (code === undefined) {
-//     res.status(500).json({"Status":"Failed"});
-//   } else {
-//     var sendStatus = sender.executeCodes(code);
-//     res.status(200).json({
-//       "Status":"Success",
-//       "Send Status":sendStatus
-//     });
-//   }
-// });
-
-
 
 app.listen(3000);
